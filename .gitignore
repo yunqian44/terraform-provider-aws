@@ -1,0 +1,8 @@
+01_vpc/.terraform/
+02_s3/.terraform/
+03_ec2/.terraform/plugins/windows_amd64/terraform-provider-aws_v2.64.0_x4.exe
+04_lambda/.terraform/plugins/windows_amd64/terraform-provider-archive_v1.3.0_x4.exe
+04_lambda/.terraform/plugins/windows_amd64/terraform-provider-aws_v2.65.0_x4.exe
+04_lambda/.terraform/
+04_lambda/terraform.tfstate.backup
+04_lambda/terraform.tfstate
