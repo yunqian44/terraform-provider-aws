@@ -38,6 +38,7 @@ resource "aws_instance" "this" {
     }
   }
 
+
   dynamic "ebs_block_device" {
     for_each = var.ebs_block_device
     content {
@@ -94,3 +95,5 @@ resource "aws_instance" "this" {
     cpu_credits = local.is_t_instance_type ? var.cpu_credits : null
   }
 }
+
+
