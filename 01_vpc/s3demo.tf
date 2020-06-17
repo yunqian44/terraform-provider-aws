@@ -5,7 +5,7 @@ provider "aws" {
 }
 
 resource "aws_vpc" "main" {
-  cidr_block       = "190.160.0.0/16"
+  cidr_block       = "${var.vpc_cidr}"
   instance_tenancy = "default"
 
   tags = {
@@ -15,8 +15,10 @@ resource "aws_vpc" "main" {
 }
 
 resource "aws_subnet" "subnet1" {
+  #count=3  #硬编码，不推荐
+  count = "${length(var.azs)}"
   vpc_id     = "${aws_vpc.main.id}"
-  cidr_block = "190.160.1.0/24"
+  cidr_block = "${element(var.subnet_cidr,count.index)}"
 
   tags = {
     Name = "Subnet1"
