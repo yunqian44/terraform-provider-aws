@@ -6,10 +6,23 @@ variable "tenancy" {
     default = "dedicated"
 }
 
-variable "vpc_id" {
-    default = "(optional) describe your variable"
+variable "enable_dns_hostnames"{
+    type = bool
+    default = true
 }
 
-variable "subnet_cidr" {
-    default = "10.0.1.0/24"
+variable "enable_dns_support"{
+    type = bool
+    default = true
 }
+
+variable "prevent_destroy"{
+    type = bool
+    default = true
+}
+
+variable "tags"{
+    type = map(string)
+    default={}
+}
+
